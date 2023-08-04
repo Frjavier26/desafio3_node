@@ -9,9 +9,9 @@ port: 5433,
 allowExitOnIdle: true
 })
 
-const agregarPost = async (titulo, img, descripcion) => {
+const agregarPost = async (titulo, url, descripcion) => {
     const consulta = "INSERT INTO posts VALUES (DEFAULT, $1, $2, $3)"
-    const values = [titulo, img, descripcion]
+    const values = [titulo, url, descripcion]
     const result = await pool.query(consulta, values)
     console.log('Post agregado con exito')
     return result 
